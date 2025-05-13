@@ -1,16 +1,19 @@
-﻿var services = new ServiceCollection().AddServices();
-var serviceProvider = services.BuildServiceProvider();
-var productoServicio = serviceProvider.GetRequiredService<IProductoServicio>();
+﻿HostApplicationBuilder Builder = Host.CreateApplicationBuilder();
+Builder.Services.AddSingleton(typeof(IRepository<>),typeof(Repository<>));
+Builder.Services.AddSingleton<IProductRepository, ProductoRepositorioJson>();
+Builder.Services.AddSingleton<IProductValidator, ProductValidator>();
+Builder.Services.AddSingleton<ICreateProduct, CreateProductController>();
 
-Producto producto = new Producto { Id = "AB12345", Nombre="Taza", Precio=120, Existencia =20, Descontinuada = false };
+using IHost AppHost = Builder.Build();
+var productoServicio = AppHost.Services.GetRequiredService<ICreateProduct>();
+ProductDto product = new ProductDto(id: "AB12345", name: "Taza", price: 120, existence: 20, discontinued: false);
 
-NuevoProducto(producto);
-NuevoProducto(producto);
+NuevoProducto(product);
+NuevoProducto(product);
 
-void NuevoProducto(Producto producto)
+void NuevoProducto(ProductDto producto)
 {
-    var creado = productoServicio.CrearProducto(producto);
+    var creado = productoServicio.CreateProduct(producto);
     Console.WriteLine(creado);
 }
-
-
+AppHost.Run();

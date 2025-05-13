@@ -1,7 +1,11 @@
-﻿global using Prototipo.Entities;
-global using Prototipo.Repositorio;
-global using System.Text.Json;
-global using Prototipo.Servicios;
+﻿global using Microsoft.Extensions.DependencyInjection;
+global using Microsoft.Extensions.Hosting;
+global using Prototipo.BusinessObjects.Interfaces;
+global using Prototipo.Controllers.CreateProduct;
 global using Prototipo.Data;
-global using Prototipo.Validador;
-global using Microsoft.Extensions.DependencyInjection;
+global using Prototipo.Data.DataServices.Product;
+global using Prototipo.Entities.Dtos;
+global using Prototipo.Repositories.Interfaces;
+global using Prototipo.Repositories.Repositories;
+global using Prototipo.Validation.Interfaces;
+global using Prototipo.ValidatorModel.Validators;

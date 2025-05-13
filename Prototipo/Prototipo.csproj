@@ -8,7 +8,27 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="Data\**" />
+    <Compile Remove="Servicios\**" />
+    <EmbeddedResource Remove="Data\**" />
+    <EmbeddedResource Remove="Servicios\**" />
+    <None Remove="Data\**" />
+    <None Remove="Servicios\**" />
+  </ItemGroup>
+
+  <ItemGroup>
     <PackageReference Include="Microsoft.Extensions.DependencyInjection" Version="9.0.4" />
+    <PackageReference Include="Microsoft.Extensions.Hosting" Version="9.0.4" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Prototipo.Controllers\Prototipo.Controllers.csproj" />
+    <ProjectReference Include="..\Prototipo.Data\Prototipo.Data.csproj" />
+    <ProjectReference Include="..\Prototipo.Entities\Prototipo.Entities.csproj" />
+    <ProjectReference Include="..\Prototipo.Repositories\Prototipo.Repositories.csproj" />
+    <ProjectReference Include="..\Prototipo.Services\Prototipo.BusinessObjects.csproj" />
+    <ProjectReference Include="..\Prototipo.ValidatorModel\Prototipo.ValidatorModel.csproj" />
+    <ProjectReference Include="..\Prototipo.Validators\Prototipo.Validation.csproj" />
   </ItemGroup>
 	<ItemGroup>
 		<None Update="Content\Productos.json">

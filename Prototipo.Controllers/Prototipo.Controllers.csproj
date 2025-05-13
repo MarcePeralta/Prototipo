@@ -1,0 +1,14 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Prototipo.Repositories\Prototipo.Repositories.csproj" />
+    <ProjectReference Include="..\Prototipo.Services\Prototipo.BusinessObjects.csproj" />
+    <ProjectReference Include="..\Prototipo.Validators\Prototipo.Validation.csproj" />
+  </ItemGroup>
+
+</Project>
